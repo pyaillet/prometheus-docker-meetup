@@ -1,0 +1,8 @@
+version: "3.1"
+services:
+  prom:
+    image: prom/prometheus:v2.1.0
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
