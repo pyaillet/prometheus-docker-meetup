@@ -1,0 +1,12 @@
+groups:
+- name: aliens
+  interval: 1s
+  rules:
+  - alert: Aliens
+    expr: population_count{population="aliens"} > 20
+    for: 10s
+    labels: 
+      severity: slack
+    annotations:
+      summary: "⚠️ 👽 Aliens detected in the colony"
+      description: "Presence of at least 20 aliens in the colony has been confirmed. Send marines to clean the message: http://localhost:8081"

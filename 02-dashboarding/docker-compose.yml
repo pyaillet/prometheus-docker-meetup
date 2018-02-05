@@ -40,8 +40,6 @@ services:
       - prometheus
     ports:
       - 3000:3000
-    volumes:
-      - grafana_data:/var/lib/grafana
     env_file:
       - config.monitoring
     labels:

@@ -1,0 +1,12 @@
+groups:
+- name: colony
+  interval: 1s
+  rules:
+  - alert: NoBody
+    expr: population_count{population="settlers"} == 0
+    for: 10s
+    labels: 
+      severity: slack
+    annotations:
+      summary: "⚠️ 💀 nobody alive in the colony..."
+      description: "No more settlers in the colony"

@@ -4,6 +4,7 @@ services:
     image: prom/prometheus:v2.1.0
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./rules:/etc/prometheus-rules
     ports:
       - "9090:9090"
     labels:
@@ -61,6 +62,13 @@ services:
       - LOOP_MILLISECOND_TIMEOUT=1000
     labels:
       container_group: "xenomorphs"      
+  alertmanager:
+    image: prom/alertmanager:v0.13.0
+    volumes:
+      - ./alertmanager-config.yml:/etc/alertmanager/config.yml
+      - ./aliens.tmpl:/etc/alertmanager/templates/aliens.tmpl
+    ports:
+      - 9093:9093
 
 volumes:
     prometheus_data: {}
