@@ -40,14 +40,16 @@ services:
       - prometheus
     ports:
       - 3000:3000
-    volumes:
-      - grafana_data:/var/lib/grafana
     env_file:
       - config.monitoring
     labels:
       container_group: "monitoring"
   grafana-init:
     build: grafana-init
+    environment:
+      - GRAFANA_HOST=grafana:3000
+    volumes:
+      - ./:/root/app
   aliens:
     image: xeno:1.0
     ports:
