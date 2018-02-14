@@ -8,6 +8,16 @@ services:
       - "9090:9090"
     labels:
       container_group: "monitoring"
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    env_file:
+      - config.monitoring
+    labels:
+      container_group: "monitoring"
   node-exporter:
     image: prom/node-exporter
     volumes:
@@ -34,16 +44,6 @@ services:
       - 8080:8080
     labels:
       container_group: "ops-infrastructure"
-  grafana:
-    image: grafana/grafana
-    depends_on:
-      - prometheus
-    ports:
-      - 3000:3000
-    env_file:
-      - config.monitoring
-    labels:
-      container_group: "monitoring"
 
 volumes:
     prometheus_data: {}

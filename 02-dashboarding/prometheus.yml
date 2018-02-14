@@ -1,7 +1,6 @@
 # my global config
 global:
   scrape_interval:     1s
-  evaluation_interval: 1s
 
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
