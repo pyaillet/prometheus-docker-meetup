@@ -1,7 +1,0 @@
-{
-  "name": "prometheus",
-  "type": "prometheus",
-  "url": "http://prom:9900",
-  "access": "direct",
-  "basicAuth": false
-}
