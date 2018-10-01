@@ -6,6 +6,8 @@
  - View a unique metric and maybe debug an expression
 
 
-TODO
- Gauge/Summary/Counter ???
- Trouver une métrique intéressante à montrer lors de la première démo
+# TODO
+ * Gauge
+ * Summary
+ * Counter
+ * Trouver une métrique intéressante à montrer lors de la première démo
